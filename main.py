@@ -20,45 +20,45 @@ def average(cases):
     return res
 '''
 @:param:cases
-@:Description:返回每个人的平均debug时间
-@:return:list
+@:Description:返回每个人每次的平均debug时间(每道题的完成时间除以每道题的提交次数-1)
+@:return:list(int)
 '''
 def debugTime(cases):
     return
 '''
 @:param:cases
-@:Description:返回每个人的每道题的平均提交次数
-@:return:list
+@:Description:返回每个人所有提交题目的平均提交次数
+@:return:list(int)
+'''
+def uploadTimes(cases):
+    return
+'''
+@:param:cases
+@:Description:返回每个人的提交过的题目总数
+@:return:list(int)
 '''
 def uploadNum(cases):
     return
 '''
 @:param:cases
-@:Description:返回每个人的提交过的题目总数
-@:return:list
-'''
-def uploadQues(cases):
-    return
-'''
-@:param:cases
 @:Description:返回每个人满分题目总数
-@:return:double
+@:return:list(int)
 '''
 def acNum(cases):
     return
 '''
 @:param:cases
 @:Description:返回每个人第一次提交和最后一次提交的时间差(单位：天)
-@:return:int
+@:return:list(int)(向上取整)
 '''
 def allTime(cases):
     return
 '''
 @:param:cases
-@:Description:返回每个人的评价代码行数
-@:return:int(向下取整)
+@:Description:返回每个人所有题目的平均完成时间(单位：小时,超过12h则省去,且此人题目总数-1)
+@:return:list(int)(向上取整)
 '''
-def avrLine(cases):
+def avrTimePerQues(cases):
     return
 def main():
     f=open('test_data.json',encoding='utf-8')
@@ -81,8 +81,8 @@ def main():
     # for i in range(0,271):
     #     print('{0}:{1}'.format(userIds[i],cases[i]))
     print("id:")
-    for i in userIds:
-        print(i)
+    #for i in userIds:
+     #   print(i)
     average(cases)
     # for i in cases:
     #     print(cases[i])
