@@ -1,5 +1,7 @@
 from CodeProcesser import CodeProcesser
+from decimal import Decimal
 class DataProcesser:
+
     '''
     本类用来预处理所需要的数据
     参数说明:
@@ -57,6 +59,8 @@ class DataProcesser:
                 score += cases[i][j]['final_score']
             score /= len(cases[i])
             res.append(score)
+        # for i in range(0, 271):
+        #     res[i] = Decimal(res[i]).quantize(Decimal('0.0'))
         return res
 
     '''
@@ -73,6 +77,8 @@ class DataProcesser:
                 times += len(cases[i][j]['upload_records'])
             times /= len(cases[i])
             res.append(times)
+        # for i in range(0,271):
+        #     res[i]=Decimal(res[i]).quantize(Decimal('0.0'))
         return res
 
     '''
@@ -152,4 +158,6 @@ class DataProcesser:
                 res.append([0, 0])
             else:
                 res.append([time / num, num])
+        # for i in range(0, 271):
+        #     res[i][0] = Decimal(res[i][0]).quantize(Decimal('0.0'))
         return res

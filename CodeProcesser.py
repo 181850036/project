@@ -10,6 +10,7 @@ class CodeProcesser:
         self.userIds=userIds
         self.cGroup=[[],[],[],[],[]]
         self.uGroup=[[],[],[],[],[]]
+        self.avgPerGroup=[]
 
     '''
     @:param:cases
@@ -91,5 +92,6 @@ class CodeProcesser:
         sum=sum/len(self.uGroup[4])/199
         res.append(sum)
         print(sum)
+        self.avgPerGroup=res
         return res
 
