@@ -33,16 +33,22 @@ def main():
     for i in range(0, 271):
         for j in range(0, 5):
             if (userIds[i] in ug[j]):
-                ultimateScore[i] = ultimateScore[i] / (hardest / avgPerGroup[j])
+                ultimateScore[i] = ultimateScore[i] / (avgPerGroup[j] / hardest)
     for i in range(0,len(userIds)):
         print("id: "+str(userIds[i])+" 完成数:" +str(acNum[i])+" 平均分:"+str(avg[i])+" 平均提交次数:"+str(uploadNum[i])+
               " 历时:"+str(alltime[i])+" 平均debug时间:"+str(avgDebugTime[i][0])+"秒"+" 总分:"+str(ultimateScore[i]))
     # for i in range(0,271):
     #     print(ultimateScore[i])
-
-    res=[0]*12
+    print(max(ultimateScore))
+    res=[0]*10
+    '''分组'''
     for i in range(0,271):
-        res[math.floor((ultimateScore[i]-ultimateScore[i]%10)//10)]+=1
+        if(ultimateScore[i]%10!=0):
+            res[math.floor((ultimateScore[i]-ultimateScore[i]%10)//10)]+=1
+        elif(ultimateScore[i]==0):
+            res[0]+=1
+        else:
+            res[math.floor((ultimateScore[i])) // 10-1] += 1
     print(res)
     ultimateScore.sort()
     print(ultimateScore)

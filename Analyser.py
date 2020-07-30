@@ -12,6 +12,7 @@ class Analyser:
         self.avgDebugTime=avgDebugTime
         self.userId=userId
         self.cases=cases
+    '''满分题目得分，满分40'''
     def AcWeight(self):
         AcNum=self.AcNum
         res=[]
@@ -22,6 +23,8 @@ class Analyser:
             else:
                 res.append(AcNum[i]/200*40)
         return res
+
+    '''平均分得分，满分30'''
     def avgWeight(self):
         res=[]
         top = max(self.avg)
@@ -29,6 +32,8 @@ class Analyser:
             res.append(self.avg[i]/top*30)
 
         return res
+
+    '''平均提交次数得分，满分10'''
     def uploadTimesWeight(self):
         minTime = 10000
         avgAll = 0
@@ -50,6 +55,8 @@ class Analyser:
         #print(res)
         #print(max(res))
         return res
+
+    '''平均debug时间得分，满分20'''
     def avgDebugTimeWeight(self):
         minTime = 10000
         avgAll=0
@@ -81,6 +88,7 @@ class Analyser:
         avgWeight=analyser.avgWeight(self)
         AcWeight=analyser.AcWeight(self)
         uploadTimesWeight=analyser.uploadTimesWeight(self)
+       # print("252"+" "+str(AcWeight[252])+" "+str(avgWeight[252])+" "+str(avgDebugTimeWeight[252])+" "+str(uploadTimesWeight[252]))
         for i in range(0,271):
             res[i]=res[i]+avgDebugTimeWeight[i]+avgWeight[i]+AcWeight[i]+uploadTimesWeight[i]
         return res
