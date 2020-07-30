@@ -57,15 +57,15 @@ class CodeProcesser:
                     self.uGroup[groupIndex].append(self.userIds[i])
             if not foundIn0To4:
                 self.uGroup[4].append(self.userIds[i])
-        #以下打印各组题目、各组学生以及数量
-        for i in self.cGroup:
-            print(i)
-        for i in range(0,5):
-            print(len(self.cGroup[i]))
-        for i in self.uGroup:
-            print(i)
-        for i in range(0, 5):
-            print(len(self.uGroup[i]))
+        # 以下打印各组题目、各组学生以及数量
+        # for i in self.cGroup:
+        #     print(i)
+        # for i in range(0,5):
+        #     print(len(self.cGroup[i]))
+        # for i in self.uGroup:
+        #     print(i)
+        # for i in range(0, 5):
+        #     print(len(self.uGroup[i]))
     '''
     @:param:cases
     @:Description:返回5个组的平均得分
@@ -82,7 +82,6 @@ class CodeProcesser:
                         sum+=case['final_score']
             sum=sum/len(self.uGroup[group])/200
             res.append(sum)
-            print(sum)
         sum=0
         #第五组199道
         for userid in range(0,271):
@@ -91,7 +90,6 @@ class CodeProcesser:
                     sum+=case['final_score']
         sum=sum/len(self.uGroup[4])/199
         res.append(sum)
-        print(sum)
         self.avgPerGroup=res
         return res
 

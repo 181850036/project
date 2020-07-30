@@ -39,7 +39,7 @@ class Analyser:
             if(self.uploadNum[i]<minTime and self.uploadNum[i]>=avgAll and self.AcNum[i]>=100):
                 minTime=self.uploadNum[i]
         res=[]
-        print(minTime)
+        #print(minTime)
         for i in range(0,271):
             if(self.AcNum[i]==0 or self.uploadNum[i]==0):
                 res.append(0)
@@ -47,8 +47,8 @@ class Analyser:
                 res.append(10)
             else:
                 res.append(avgAll/self.uploadNum[i]*10)
-        print(res)
-        print(max(res))
+        #print(res)
+        #print(max(res))
         return res
     def avgDebugTimeWeight(self):
         minTime = 10000
@@ -60,7 +60,7 @@ class Analyser:
             if (self.avgDebugTime[i][0] < minTime and self.avgDebugTime[i][0] > 0 and self.AcNum[i] >= 100 and self.avgDebugTime[i][0]>avgAll):
                 minTime = self.avgDebugTime[i][0]
         res = []
-        print(minTime)
+        #print(minTime)
         for i in range(0, 271):
             if (self.AcNum[i] == 0 or self.avgDebugTime[i][0]==0):
                 res.append(0)
@@ -70,8 +70,8 @@ class Analyser:
                 res.append(10)
             else:
                 res.append(avgAll / self.avgDebugTime[i][0] * 20)
-        print(max(res))
-        print(res)
+        #print(max(res))
+        #print(res)
         return res
     def ultimateScore(self):
         analyser=Analyser

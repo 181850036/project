@@ -25,9 +25,6 @@ class DataProcesser:
                 if not self.isValid(self.cases[i][j]):
                     self.invalidNum[i]+=1
                     self.cases[i][j]['final_score']=0
-        codeProcesser=CodeProcesser(self.userIds,self.cases)
-        codeProcesser.group()
-        avgPerGroup=codeProcesser.AvgPerGroup()
     '''
     @:param:case
     @:Description:若此题得分为面向用例则无效，判别方式是若最终满分，且后四次得分递增，间隔时间短于1分钟
@@ -42,7 +39,6 @@ class DataProcesser:
                     and case['upload_records'][-2]['upload_time']-case['upload_records'][-3]['upload_time']<60000\
                     and case['upload_records'][-3]['upload_time']-case['upload_records'][-4]['upload_time']<60000:
                         return False
-        #print("wuhu!")
         return True
 
     '''

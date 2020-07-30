@@ -18,8 +18,8 @@ def main():
     alltime=dataProcesser.AllTime()
     avgDebugTime=dataProcesser.AvgDebugTime()
     userIds=dataProcesser.userIds
-    codeProcesser=CodeProcesser(userIds,dataProcesser.cases)
-    print(dataProcesser.invalidNum)
+    codeProcesser=CodeProcesser(dataProcesser.userIds,dataProcesser.cases)
+    codeProcesser.group()
     for i in range(0,271):
         acNum[i]-=dataProcesser.invalidNum[i]
         if(acNum[i]<0):
@@ -27,12 +27,7 @@ def main():
     analyser=Analyser(avg, acNum,uploadNum,alltime,avgDebugTime,userIds,dataProcesser.cases)
     ultimateScore = analyser.ultimateScore()
     ug = codeProcesser.uGroup
-    avgPerGroup = [75.42470566037736,
-                   78.69750566037736,
-                   84.42784772727273,
-                   72.89817462686568,
-                   73.12617731514715]
-    # print(avgPerGroup)
+    avgPerGroup = codeProcesser.AvgPerGroup()
     hardest = min(avgPerGroup)
     '''根据每组题目难度平衡分数'''
     for i in range(0, 271):
@@ -46,7 +41,7 @@ def main():
     #     print(ultimateScore[i])
 
     print(max(ultimateScore))
-    res=[0]*10
+    res=[0]*11
     for i in range(0,271):
         res[math.floor((ultimateScore[i])//10)-1]+=1
     print(res)
