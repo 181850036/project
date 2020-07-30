@@ -40,10 +40,11 @@ def main():
     # for i in range(0,271):
     #     print(ultimateScore[i])
 
-    print(max(ultimateScore))
-    res=[0]*11
+    res=[0]*12
     for i in range(0,271):
-        res[math.floor((ultimateScore[i])//10)-1]+=1
+        res[math.floor((ultimateScore[i]-ultimateScore[i]%10)//10)]+=1
     print(res)
+    ultimateScore.sort()
+    print(ultimateScore)
 if __name__ == '__main__':
     main()
